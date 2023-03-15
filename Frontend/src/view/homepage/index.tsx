@@ -22,6 +22,7 @@ import {
   ShopProductSearch,
 } from '../../sections/@dashboard/e-commerce/shop';
 import CartWidget from '../../sections/@dashboard/e-commerce/CartWidget';
+import Header from '../../components/header';
 
 // ----------------------------------------------------------------------
 
@@ -83,6 +84,7 @@ export default function HomePage() {
 
   return (
     <>
+      <Header/>
       <FormProvider methods={methods}>
         <Container maxWidth={themeStretch ? false : 'lg'}>
           <Stack
