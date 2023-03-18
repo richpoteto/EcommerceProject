@@ -108,7 +108,6 @@ export default function ProductDetailsSummary({
         });
       }
       onGotoStep(0);
-      navigate(PATH_DASHBOARD.eCommerce.checkout);
     } catch (error) {
       console.error(error);
     }
