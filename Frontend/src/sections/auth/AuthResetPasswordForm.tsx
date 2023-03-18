@@ -37,7 +37,7 @@ export default function AuthResetPasswordForm() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
       sessionStorage.setItem('email-recovery', data.email);
-      navigate(PATH_AUTH.newPassword);
+      navigate(PATH_AUTH.register);
     } catch (error) {
       console.error(error);
     }

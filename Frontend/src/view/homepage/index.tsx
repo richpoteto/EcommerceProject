@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import orderBy from 'lodash/orderBy';
 // form
@@ -21,7 +20,6 @@ import {
   ShopFilterDrawer,
   ShopProductSearch,
 } from '../../sections/@dashboard/e-commerce/shop';
-import CartWidget from '../../sections/@dashboard/e-commerce/CartWidget';
 import Header from '../../components/header';
 
 // ----------------------------------------------------------------------

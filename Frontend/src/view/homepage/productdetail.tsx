@@ -14,7 +14,6 @@ import { ICheckoutCartItem } from '../../@types/product';
 // components
 import Iconify from '../../components/iconify';
 import Markdown from '../../components/markdown';
-import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
 import { SkeletonProductDetails } from '../../components/skeleton';
 // sections
@@ -87,16 +86,12 @@ export default function ProductDetail() {
 
   return (
     <>
-      <Helmet>
-        <title>{`Ecommerce: ${product?.name || ''} | Minimal UI`}</title>
-      </Helmet>
-
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CartWidget totalItems={checkout.totalItems} />
 
         {product && (
           <>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} sx={{ mt: '24px' }}>
               <Grid item xs={12} md={6} lg={7}>
                 <ProductDetailsCarousel product={product} />
               </Grid>

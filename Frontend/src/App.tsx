@@ -36,7 +36,7 @@ function App() {
                             <Route path="/" element={<HomePage />} />
                             <Route path="/auth/login" element={<LoginPage />} />
                             <Route path="/auth/register" element={<RegisterPage/>} />
-                            <Route path="/detail" element={<ProductDetail/> } />
+                            <Route path="/dashboard/e-commerce/product/:name" element={<ProductDetail/> } />
                           </Routes>
                         </SnackbarProvider>
                       </ThemeLocalization>
