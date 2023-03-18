@@ -89,6 +89,20 @@ ProductSchema.statics = {
   },
 
   /**
+   * Get book by name
+   * @param {string} name - The objectId of book.
+   * @returns {Promise<Book, APIError>}
+   */
+
+  async getByName(name) {
+    const product = await this.find({name}).exec();
+    if (!product) {
+      throw new APIError('No such product exists!', httpStatus.NOT_FOUND);
+    }
+    return product;
+  },
+
+  /**
    * List books and populate owner details to wich the book belongs to.
    * @returns {Promise<Product[]>}
    */

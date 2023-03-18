@@ -26,9 +26,13 @@ router.route('/')
   /** POST /api/books - Create new book */
   .post(validate(paramValidation.createProduct), productCtrl.create);
 
-router.route('/:name')
+router.route('/product')
   /** GET /api/books/:bookId - Get book */
-  .get(validate(paramValidation.getProduct), productCtrl.get)
+  .get(validate(paramValidation.getProduct), productCtrl.getByName)
+
+router.route('/search')
+  /** GET /api/books/:bookId - Get book */
+  .get(validate(paramValidation.getProduct), productCtrl.getByQuery)
 
   // /** PUT /api/books/:bookId - Update book */
   // .put(validate(paramValidation.updateBook), productCtrl.update)
@@ -36,7 +40,7 @@ router.route('/:name')
   // /** DELETE /api/books/:bookId - Delete book */
   // .delete(productCtrl.remove);
 
-/** Load book when API with bookId route parameter is hit */
-router.param('productId', productCtrl.load);
+// /** Load book when API with bookId route parameter is hit */
+// router.param('productId', productCtrl.load);
 
 module.exports = router;
