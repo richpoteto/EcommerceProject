@@ -24,10 +24,16 @@ const paramValidation = {
 
 /** POST /api/auth/login - Returns token if correct username and password is provided */
 router.route('/login')
-  .post(validate(paramValidation.login), authCtrl.login);
+  // .post(validate(paramValidation.login), authCtrl.login);
+  .post(authCtrl.login);
 
 /** POST /api/auth/register - Register a new user */
 router.route('/register')
-  .post(validate(paramValidation.registerUser), authCtrl.register);
+  // .post(validate(paramValidation.registerUser), authCtrl.register);
+  .post(authCtrl.register);
+
+router.route('/my-account')
+  /** GET /api/users/profile - Get profile of logged in user */
+  .get(authCtrl.getProfile);
 
 module.exports = router;

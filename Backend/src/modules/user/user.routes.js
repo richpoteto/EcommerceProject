@@ -27,9 +27,7 @@ router.route('/')
   /** GET /api/users - Get list of users */
   .get(userCtrl.list);
 
-router.route('/profile')
-  /** GET /api/users/profile - Get profile of logged in user */
-  .get(userCtrl.getProfile);
+
 
 router.route('/:userId')
   /** GET /api/users/:userId - Get user */

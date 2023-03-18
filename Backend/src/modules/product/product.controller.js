@@ -17,10 +17,32 @@ async function load(req, res, next, id) {
 
 /**
  * Get Product
+ * @property {string} req.body.name - The name of Product.
  * @returns {Product}
  */
-function get(req, res) {
-  return res.json(req.product);
+async function getByName(req, res, next) {
+  try {
+    const product = await Product.getByName(req.body.name);
+    res.product = {product};
+    return next();
+  } catch (error) {
+    return next(error);
+  }
+}
+
+/**
+ * Get Product
+ * @property {string} req.body.query - The name of Product.
+ * @returns {Product}
+ */
+async function getByQuery(req, res, next) {
+  try {
+    const product = await Product.getByName(req.body.query);
+    res.product = {product};
+    return next();
+  } catch (error) {
+    return next(error);
+  }
 }
 
 /**
@@ -95,7 +117,8 @@ async function remove(req, res, next) {
 
 module.exports = {
   load,
-  get,
+  getByName,
+  getByQuery,
   create,
   // update,
   list,
